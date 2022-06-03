@@ -1,0 +1,40 @@
+# High-level Pseudo Code
+
+I will need a way to easily create different types of employees, these employees will have a name, id, and email in addition to properties that will be unique based on their role (engineer-github and intern-school). 
+-- Subclasses that extend a parent class --
+
+I will need to test the classes I have created to ensure that they are working correctly.
+-- Jest --
+
+I will need to prompt users to ask what type of employee they want to add, then I will need to ask them questions that are specific to that type of employee.
+-- Inquirer --
+
+I will need to create html "cards" for each of the employees that the user chooses. The card will be filled out with the responses they entered in the prompts.
+-- Template literals --
+
+I will then need to add those cards to an HTML document
+-- More Template literals -- 
+
+After I have created the template for my html document I will need to write the html file in the 'dist' directory
+-- fs --
+
+
+# Application Flow
+
+User will run the application and will be presented with questions to create a manager.
+
+    After the user has answered the prompts for manager, create a new Manager.
+
+        Push that manager to an array of employees.
+
+User will prompted to add an engineer/intern or exit
+
+    If the users chooses to add an engineer/intern they will be prompted to answer questions about the new employee.
+
+        After the user has answered a new Engineer/Intern is created and pushed to the array of employees.
+
+            The user is then prompted to add an engineer/intern or exit
+
+    If the user chooses to exit, the array of employees will be looped to create HTML 'cards' for each of the employees. Those cards will be inserted into the html document template.
+
+        When the html content has been created it will need to be written into an HTML file in the 'dist' directory
