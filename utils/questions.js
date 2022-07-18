@@ -24,8 +24,8 @@ const managerQuestions = [
         name: 'managerId',
         message: `What is the team manager's id?`,
         validate: async (input) => {
-            const input = parseInt(input);
-            if (isNaN(input)) {
+            const num = parseInt(input);
+            if (isNaN(num)) {
                 return 'Please enter a number';
             }
             return true;
