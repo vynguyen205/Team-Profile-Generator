@@ -24,19 +24,7 @@ function startHtml (allEmployees) {
                 </div>
             </div>
             <div class="row">
-                ${allEmployees.map(employee => /*html*/`
-                    <div class="col-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">${employee.name}</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">${employee.getRole()}</h6>
-                                <p class="card-text">${employee.id}</p>
-                                <a href="#" class="card-text">${employee.email}</a>
-                                <p class="card-text">${employee.officeNumber || employee.github || employee.school}</p>
-                            </div>
-                        </div>
-                    </div>
-                `).join('')}
+                ${allEmployees.map(createCard).join('')}
             </div>
         </div>
     </body>
@@ -45,6 +33,20 @@ function startHtml (allEmployees) {
     fs.writeFileSync(path.join(__dirname, "../dist/index.html"), html, "utf8");
 }
 
+const createCard = employee => {
+    return  /*html*/`
+    <div class="col-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">${employee.name}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">${employee.getRole()}</h6>
+                <p class="card-text">${employee.id}</p>
+                <a href="#" class="card-text">${employee.email}</a>
+                <p class="card-text">${employee.officeNumber || employee.github || employee.school}</p>
+            </div>
+        </div>
+    </div>`
+}
 
 
 module.exports.startHtml =  startHtml ;
